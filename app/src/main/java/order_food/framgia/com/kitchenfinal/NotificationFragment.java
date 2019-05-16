@@ -54,7 +54,7 @@ public class NotificationFragment extends Fragment {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Order");
 
-        options = new FirebaseRecyclerOptions.Builder<Order>().setQuery(databaseReference, new SnapshotParser<Order>() {
+        options = new FirebaseRecyclerOptions.Builder<Order>().setQuery(databaseReference.orderByChild("status").equalTo("order"), new SnapshotParser<Order>() {
             @NonNull
             @Override
             public Order parseSnapshot(@NonNull DataSnapshot snapshot) {

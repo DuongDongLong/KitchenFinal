@@ -64,8 +64,6 @@ public class NotificationDetailFragment extends Fragment implements View.OnClick
             @Override
             public Cart parseSnapshot(@NonNull DataSnapshot snapshot) {
                 // TODO parse data ra đây
-                Log.d("TAGGGGGG", "parseSnapshot:aaaaaaaaaaaaaaaa "+snapshot.child("quantity").getValue().toString());
-
                 return new Cart(snapshot.child("name").getValue().toString(),
                         snapshot.child("description").getValue().toString(),
                         snapshot.child("image").getValue().toString(),
@@ -112,13 +110,14 @@ public class NotificationDetailFragment extends Fragment implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button_accept:
-                final AlertDialog.Builder alertBuilder = new AlertDialog.Builder(v.getContext());
+                final  AlertDialog.Builder alertBuilder = new AlertDialog.Builder(v.getContext());
                 View view=getLayoutInflater().inflate(R.layout.oder_dialog,null);
                 Button send=view.findViewById(R.id.button_send);
                 Button cancel=view.findViewById(R.id.button_cancel);
                 send.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        databaseReference.child("status").setValue("accept");
 
                     }
                 });
