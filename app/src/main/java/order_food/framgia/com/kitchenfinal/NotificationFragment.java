@@ -22,6 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import order_food.framgia.com.kitchenfinal.adapter.OnClickItem;
+
 public class NotificationFragment extends Fragment {
     FirebaseRecyclerOptions<Order> options;
     FirebaseRecyclerAdapter<Order, NotificationViewHolder> adapter;

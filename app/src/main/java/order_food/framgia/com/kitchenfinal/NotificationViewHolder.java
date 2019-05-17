@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import order_food.framgia.com.kitchenfinal.adapter.OnClickItem;
+
 public class NotificationViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     public TextView table,time;
     private OnClickItem itemClickListener;
@@ -26,7 +28,4 @@ public class NotificationViewHolder extends RecyclerView.ViewHolder implements V
         itemClickListener.setOnClickItem(getAdapterPosition());
     }
 
-}
-interface OnClickItem {
-    void setOnClickItem(int position);
 }
